@@ -1,0 +1,17 @@
+{
+  "mcpServers": {
+    "travelpayouts": {
+      "command": "python3",
+      "args": ["-m", "travelpayouts_mcp"],
+      "env": {
+        "TRAVELPAYOUTS_TOKEN": "PASTE_X_ACCESS_TOKEN_HERE",
+        "TRAVELPAYOUTS_MARKER": "",
+        "TRAVELPAYOUTS_TRS": "",
+        "TRAVELPAYOUTS_DOMAIN": "www.aviasales.ru",
+        "TRAVELPAYOUTS_CURRENCY": "rub",
+        "TRAVELPAYOUTS_MARKET": "ru",
+        "TRAVELPAYOUTS_LOCALE": "ru"
+      }
+    }
+  }
+}

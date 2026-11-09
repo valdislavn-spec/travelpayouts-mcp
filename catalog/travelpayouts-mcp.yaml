@@ -1,0 +1,31 @@
+# Docker MCP Toolkit catalog entry for the Travelpayouts MCP server.
+#
+# Local installation (Docker Desktop 4.9x, MCP Toolkit):
+#   1. Build the image:            docker build -t travelpayouts-mcp:local .
+#   2. Copy this file:             cp catalog/travelpayouts-mcp.yaml ~/.docker/mcp/catalogs/
+#   3. Add to a profile:           docker mcp profile server add dsh --server file://travelpayouts-mcp.yaml
+#   4. Set secrets (Docker Desktop → MCP Toolkit → Secrets, or CLI):
+#        docker mcp secret set travelpayouts.token   # X-Access-Token
+#        docker mcp secret set travelpayouts.marker  # e.g. YOUR_MARKER
+#        docker mcp secret set travelpayouts.trs     # e.g. YOUR_TRS
+#   5. Restart the gateway (Plugins → docker-mcp-gateway Off/On).
+#
+# The server starts even without secrets; API tools then return a clear
+# "set TRAVELPAYOUTS_TOKEN" error instead of crashing.
+name: travelpayouts
+type: server
+title: Travelpayouts (Aviasales) MCP
+description: >-
+  Cheap flights, price calendars, special offers, popular directions and
+  Travelpayouts affiliate links via the Aviasales Data API and Partner Links API.
+image: travelpayouts-mcp:local
+secrets:
+  - name: travelpayouts.token
+    env: TRAVELPAYOUTS_TOKEN
+    example: "X-Access-Token from https://app.travelpayouts.com/profile/api-token"
+  - name: travelpayouts.marker
+    env: TRAVELPAYOUTS_MARKER
+    example: "YOUR_MARKER"
+  - name: travelpayouts.trs
+    env: TRAVELPAYOUTS_TRS
+    example: "YOUR_TRS"

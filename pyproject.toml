@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "travelpayouts-mcp"
+version = "0.1.0"
+description = "MCP server for Travelpayouts / Aviasales: flight deals, price calendars, popular directions and affiliate links"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "travelpayouts-mcp contributors" }]
+keywords = [
+  "mcp",
+  "model-context-protocol",
+  "travelpayouts",
+  "aviasales",
+  "flights",
+  "travel",
+  "affiliate",
+  "deals",
+]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Topic :: Internet :: WWW/HTTP",
+  "Topic :: Office/Business",
+]
+dependencies = []
+
+[project.scripts]
+travelpayouts-mcp = "travelpayouts_mcp.server:main"
+
+[project.urls]
+Homepage = "https://github.com/valdislavn-spec/travelpayouts-mcp"
+Source = "https://github.com/valdislavn-spec/travelpayouts-mcp"
+Issues = "https://github.com/valdislavn-spec/travelpayouts-mcp/issues"
+
+[tool.setuptools]
+packages = ["travelpayouts_mcp"]

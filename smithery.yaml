@@ -1,0 +1,37 @@
+# Smithery configuration template (https://smithery.ai/docs).
+# Verify the current schema in Smithery docs before publishing — the format
+# evolves; this file documents the intended stdio launch and config fields.
+startCommand:
+  type: stdio
+  configSchema:
+    type: object
+    properties:
+      travelpayoutsToken:
+        type: string
+        title: Travelpayouts API token
+        description: X-Access-Token from https://app.travelpayouts.com/profile/api-token
+      travelpayoutsMarker:
+        type: string
+        title: Partner marker
+        description: Optional; needed to create affiliate links.
+      travelpayoutsTrs:
+        type: string
+        title: Project id (trs)
+        description: Optional; needed to create affiliate links.
+      travelpayoutsDomain:
+        type: string
+        title: Aviasales host
+        description: www.aviasales.ru or www.aviasales.com
+    required:
+      - travelpayoutsToken
+  commandFunction: |-
+    (config) => ({
+      command: "python3",
+      args: ["-m", "travelpayouts_mcp"],
+      env: {
+        TRAVELPAYOUTS_TOKEN: config.travelpayoutsToken,
+        TRAVELPAYOUTS_MARKER: config.travelpayoutsMarker || "",
+        TRAVELPAYOUTS_TRS: config.travelpayoutsTrs || "",
+        TRAVELPAYOUTS_DOMAIN: config.travelpayoutsDomain || "www.aviasales.ru"
+      }
+    })
