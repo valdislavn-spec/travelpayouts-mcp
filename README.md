@@ -1,5 +1,7 @@
 # travelpayouts-mcp
 
+[![tests](https://github.com/valdislavn-spec/travelpayouts-mcp/actions/workflows/tests.yml/badge.svg)](https://github.com/valdislavn-spec/travelpayouts-mcp/actions/workflows/tests.yml) [![Python 3.9+](https://img.shields.io/badge/python-3.9%2B-blue)](https://github.com/valdislavn-spec/travelpayouts-mcp) [![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+
 **MCP-сервер для Travelpayouts / Aviasales**: дешёвые билеты, календарь низких
 цен, спецпредложения, популярные направления и создание партнёрских ссылок —
 прямо в Claude Desktop / Claude Code / Cursor / VS Code / DSH.
